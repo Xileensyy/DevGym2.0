@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevGym</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f2f2f2;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #ddd;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Encabezado -->
+        <h1>DevGym</h1>
+    </header>
+
+    <nav>
+        <!-- Menú de navegación -->
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+            <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+            <li><a href="{% url 'register' %}">Registrarse</a></li>
+            <li><a href="{% url 'available_hours' %}">Reservar</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Contenido específico de cada página -->
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <!-- Pie de página -->
+        <p>Derechos de autor &copy; {{ year }} DevGym. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
